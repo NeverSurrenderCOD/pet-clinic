@@ -14,7 +14,11 @@ jobs:
     steps:
     
       - uses: actions/checkout@v3
-
-      - name: Run a multi-line script
+      
+      - name: Build
         run: |
-          echo "hola mundo"
+          echo "Building"
+      - name: "Sonar CLoud Analysis"
+        run: |
+          chmod +x gradlew
+          .gradlew build sonar -Dsonar.tokar=${{ secrets.SONARCLOUD_TOKEN}}
