@@ -22,10 +22,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "hola mundo"
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: "Sonar CLoud Analysis"
         run: |
           chmod +x gradlew
